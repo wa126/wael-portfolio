@@ -36,7 +36,7 @@ else if(a=="rm"){cur=i;if(tab=="P"){const p=o.gallery.splice(j,1)[0];if(o.img==p
 else if(a=="cover"){cur=i;o.img=o.gallery[j]}render()});
 document.addEventListener("change",async e=>{const t=e.target;if(!t.dataset.up)return;const i=+t.dataset.i,o=arr()[i];
 for(const f of t.files){const bm=await createImageBitmap(f),s=Math.min(1,1400/Math.max(bm.width,bm.height)),c=document.createElement("canvas");c.width=bm.width*s;c.height=bm.height*s;c.getContext("2d").drawImage(bm,0,0,c.width,c.height);
-const blob=await new Promise(r=>c.toBlob(r,"image/webp",.82)),p=`assets/up-${Date.now()}-${n++}.webp`;NEW[p]={blob,url:URL.createObjectURL(blob)};
+const blob=await new Promise(r=>c.toBlob(r,"image/webp",.82)),p=`up-${Date.now()}-${n++}.webp`;NEW[p]={blob,url:URL.createObjectURL(blob)};
 if(tab=="P"){o.gallery.push(p);if(!o.img)o.img=p}else o.img=p}cur=i;render()});
 $("#exp").onclick=async()=>{const z=new JSZip();z.file("data.js","// ===== EDIT YOUR CONTENT HERE =====\nconst PROJECTS = "+JSON.stringify(P,null,1)+";\nconst CERTS = "+JSON.stringify(C,null,1)+";\n");
 const used=JSON.stringify([P,C]);for(const k in NEW)if(used.includes(k))z.file(k,NEW[k].blob);
