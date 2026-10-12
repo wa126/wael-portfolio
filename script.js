@@ -5,7 +5,7 @@ $("#projects-grid").innerHTML=PROJECTS.map(p=>`<article class="card project">
  <div class="pad"><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p>
  <ul class="tags">${p.tools.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>
  <button class="btn ghost" data-p="${p.id}">View details</button></div></article>`).join("");
-$("#certs-grid").innerHTML=CERTS.map((c,i)=>`<article class="card cert"><button class="thumb" data-c="${i}" aria-label="View certificate: ${esc(c.title)}"><img src="${c.img}" alt="${esc(c.title)} certificate" loading="lazy"></button>
+$("#certs-grid").innerHTML=CERTS.map((c,i)=>`<article class="card cert">${c.img?`<button class="thumb" data-c="${i}" aria-label="View certificate: ${esc(c.title)}"><img src="${c.img}" alt="${esc(c.title)} certificate" loading="lazy"></button>`:`<div class="ph">Certificate image to be added</div>`}
  <div class="pad"><h3>${esc(c.title)}</h3><p>${esc(c.org)}<br><small>${esc(c.date)}</small></p>${c.link?`<a href="${c.link}" target="_blank" rel="noopener">Verify credential</a>`:""}</div></article>`).join("");
 document.addEventListener("click",e=>{
  const p=e.target.closest("[data-p]"), c=e.target.closest("[data-c]");

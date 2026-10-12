@@ -34,3 +34,9 @@ Open `index.html` in a browser, or run `python3 -m http.server 8000` in this fol
 
 ## Content audit
 No wording describes you as a student; no invented employment, statistics, expert levels, or proficiency scores; DEPI is shown as in progress; only supplied certificates appear.
+
+## Editing with admin.html (no coding)
+Open `admin.html` (locally or at your-site/admin.html). Edit or add projects and certificates, upload screenshots, then click the download button. Unzip and upload `data.js` and the `assets` folder to your GitHub repo (replace existing). The site updates in about a minute.
+
+## IMPORTANT for GitHub
+Upload the whole folder including `assets/`. If images show as broken, the `assets` folder is missing from the repo.
